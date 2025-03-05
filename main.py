@@ -2,14 +2,12 @@ from tkinter import *
 import keyboard
 from change_window import open_change_window
 
-#VARIÁVEIS
 total_dead = 0
-actual_key = "F2"
+actual_key ='F2'
 actual_key2 = 'F3'
 actual_key3 = 'F4'
 key_pressed = { 'key1': False, 'key2': False, 'key3': False }
 
-#FUNÇÃO PRA LER O ARQUIVO
 def read_archive():
     global total_dead, actual_key, actual_key2, actual_key3
     try:
@@ -25,8 +23,6 @@ def read_archive():
         actual_key2 = 'F3'
         actual_key3 = 'F4'
 
-
-#FUNÇÃO PARA ATUALIZAR AS TECLAS
 def update_keys():
     global actual_key, actual_key2, actual_key3
     try:
@@ -40,11 +36,9 @@ def update_keys():
         actual_key2 = 'F3'
         actual_key3 = 'F4'
 
-#FUNÇÃO PARA ATUALIZAR O DISPLAY
 def update_display():
     display.config(text=f'TIMES DIED: {total_dead}')
 
-#FUNÇÃO PRA FECHAR
 def close():
     main_window.quit()
 
@@ -52,7 +46,6 @@ def close():
 main_window = Tk()
 main_window.title('TDC - Times Died Counter')
 
-#BARRA DE MENU
 menu_bar = Menu(main_window)
 file_menu = Menu(menu_bar, tearoff=0)
 file_menu.add_command(label="Change Binds", command=lambda: open_change_window(actual_key, actual_key2, actual_key3, update_keys))
