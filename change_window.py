@@ -2,7 +2,6 @@ from tkinter import Toplevel, Label, Button
 import keyboard
 import os
 
-#MUDA AS TECLAS
 def change_key(button, file_line, main_update_callback):
     key_pressed = keyboard.read_event().name
     button.config(text=key_pressed)
@@ -28,15 +27,12 @@ def change_key(button, file_line, main_update_callback):
 
 #FUNÇÃO DA JANELA
 def open_change_window(actual_key, actual_key2, actual_key3, main_update_callback):
-    #BASE DA JANELA
     changekey_window = Toplevel()
     changekey_window.title('Change Bind')
 
-    #TOPTEXT
     top_text = Label(changekey_window, text='Binds')
     top_text.grid(column=0, row=0, columnspan=3)
 
-    #BOTOES ROW1
     input1 = Label(changekey_window, text='Add Deaths')
     input1.grid(column=0, row=1)
 
@@ -46,7 +42,6 @@ def open_change_window(actual_key, actual_key2, actual_key3, main_update_callbac
     button1_text = Label(changekey_window, text='Press a bind to CHANGE!')
     button1_text.grid(column=2, row=1)
 
-    #BOTOES ROW2
     input2 = Label(changekey_window, text='Decrease Deaths')
     input2.grid(column=0, row=2)
 
@@ -56,7 +51,6 @@ def open_change_window(actual_key, actual_key2, actual_key3, main_update_callbac
     button2_text = Label(changekey_window, text='Press a bind to CHANGE!')
     button2_text.grid(column=2, row=2)
 
-    #BOTOES ROW3
     input3 = Label(changekey_window, text='Remove Deaths')
     input3.grid(column=0, row=3)
 
